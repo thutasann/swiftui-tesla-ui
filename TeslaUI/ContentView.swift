@@ -11,29 +11,31 @@ import SwiftUI
 // MARK: - MAIN CONTENT VIEW FOR HOME SCREEN
 struct ContentView: View {
     var body: some View {
-        ZStack{
-                
-            ScrollView{
-                VStack(spacing: 20){
-                    HomeHeader()
-                    CustomDivider()
-                    CarSection()
-                    CustomDivider()
-                    CategoryView(title: "Quick Shortcuts", showEdit: true, actionItems: quickShortcuts)
-                    CustomDivider()
-                    CategoryView(title: "Recent Actions", showEdit: true, actionItems: recentShortcuts)
-                    CustomDivider()
-                    AllSettings()
-                    RecorderButton()
+        NavigationView {
+            ZStack{
+                ScrollView{
+                    VStack(spacing: 20){
+                        HomeHeader()
+                        CustomDivider()
+                        CarSection()
+                        CustomDivider()
+                        CategoryView(title: "Quick Shortcuts", showEdit: true, actionItems: quickShortcuts)
+                        CustomDivider()
+                        CategoryView(title: "Recent Actions", showEdit: true, actionItems: recentShortcuts)
+                        CustomDivider()
+                        AllSettings()
+                        RecorderButton()
+                    }
+                    .padding()
                 }
-                .padding()
+                
+                VoiceCommandButton()
             }
-            
-            VoiceCommandButton()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color("DrakGray"))
+            .foregroundColor(Color.white)
+            .navigationBarHidden(true)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("DrakGray"))
-        .foregroundColor(Color.white)
     }
 }
 
@@ -237,7 +239,11 @@ struct AllSettings: View{
         VStack{
             CategoryHeader(title: "All Settings")
             LazyVGrid(columns: [GridItem(.fixed(190)), GridItem(.fixed(190))]){
+                
+                NavigationLink(destination: CarControlView()){
                 SettingBlock(icon: "car.fill", title: "Controls", subtitle: "CAR CONTROL", hasSubtitle: true)
+                }
+                
                 SettingBlock(icon: "fanblades.fill", title: "Climate", subtitle: "Interior 68° F", hasSubtitle: true, backgroundColor: Color.blue)
                 SettingBlock(icon: "location.fill",  title: "Location", subtitle: "EMPIRE STATE BUILDING", hasSubtitle: true)
                 SettingBlock(icon: "sparkles", title: "Upgrades", subtitle: "3 upgrades available", hasSubtitle: true)
@@ -274,7 +280,8 @@ struct SettingBlock: View{
             Image(systemName: "chevron.right")
             
         }
-        .padding()
+        .padding(.horizontal, 8)
+        .padding(.vertical, 16)
         .background(backgroundColor)
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.white.opacity(0.2), lineWidth: 1.5))

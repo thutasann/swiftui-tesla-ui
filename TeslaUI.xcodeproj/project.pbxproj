@@ -11,6 +11,7 @@
 		6B192E0C2936EE1B00429F0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B192E0B2936EE1B00429F0D /* ContentView.swift */; };
 		6B192E0E2936EE1C00429F0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B192E0D2936EE1C00429F0D /* Assets.xcassets */; };
 		6B192E112936EE1C00429F0D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B192E102936EE1C00429F0D /* Preview Assets.xcassets */; };
+		6B192E18293756EF00429F0D /* CarControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B192E17293756EF00429F0D /* CarControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		6B192E0B2936EE1B00429F0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6B192E0D2936EE1C00429F0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B192E102936EE1C00429F0D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6B192E17293756EF00429F0D /* CarControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				6B192E092936EE1B00429F0D /* TeslaUIApp.swift */,
 				6B192E0B2936EE1B00429F0D /* ContentView.swift */,
+				6B192E17293756EF00429F0D /* CarControlView.swift */,
 				6B192E0D2936EE1C00429F0D /* Assets.xcassets */,
 				6B192E0F2936EE1C00429F0D /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B192E0C2936EE1B00429F0D /* ContentView.swift in Sources */,
+				6B192E18293756EF00429F0D /* CarControlView.swift in Sources */,
 				6B192E0A2936EE1B00429F0D /* TeslaUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
