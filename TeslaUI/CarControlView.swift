@@ -38,8 +38,8 @@ struct CarControlView: View {
                         .fontWeight(.semibold)
                 }
                 CustomDivider()
-                CarLockButton()
                 CustomDivider()
+                CarLockButton()
                 ActionButtons()
                 CustomDivider()
                 HStack{
@@ -61,26 +61,15 @@ struct CarControlView: View {
     }
 }
 
-
-
-
 // MARK: - Car Lock Button
-struct CarLockButton: View {
-    var body: some View {
+struct CarLockButton: View{
+    var body: some View{
         Button(action: {}){
-            Label("Unlock car", systemImage: "lock.fill")
-                .font(.system(size: 16, weight: .semibold, design: .default))
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(Color.white.opacity(0.5))
-                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-                .overlay(
-                    Circle()
-                        .stroke(Color.white.opacity(0.1), lineWidth: 0.5)
-                )
+            FullButton(text: "Unlock Car", icon: "lock.fill")
         }
     }
 }
+
 
 // MARK: - Aciton Buttons
 struct ActionButtons: View {

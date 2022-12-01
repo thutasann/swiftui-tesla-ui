@@ -96,36 +96,6 @@ struct HomeHeader: View{
 }
 
 
-// MARK: - Header Buttons
-struct HeaderButton: View{
-    
-    var icon: String
-    
-    var body: some View{
-        Image(systemName: icon)
-            .imageScale(.large)
-            .frame(width: 44, height: 44)
-            .background(Color.white.opacity(0.05))
-            .clipShape(Circle())
-            .overlay(
-                Circle()
-                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
-            )
-    }
-}
-
-
-// MARK: - Custom Divider
-struct CustomDivider: View{
-    var body: some View{
-        Rectangle()
-            .frame(maxWidth: .infinity)
-            .frame(height: 0.5)
-            .background(Color.white)
-            .opacity(0.1)
-    }
-}
-
 // MARK: - Car Section
 struct CarSection: View{
     var body: some View{
@@ -198,26 +168,6 @@ struct CategoryView: View{
     }
 }
 
-// MARK: - Action buttons
-struct  ActionButton: View{
-    
-    var item: ActionItem
-    
-    var body: some View{
-        VStack(alignment: .center){
-            HeaderButton(icon: item.icon)
-            Text(item.text)
-                .frame(width: 72)
-                .font(.system(size: 12, weight: .semibold, design: .default))
-                .multilineTextAlignment(.center)
-        }
-    }
-}
-
-struct ActionItem: Hashable{
-    var icon: String
-    var text: String
-}
 
 let quickShortcuts: [ActionItem] = [
     ActionItem(icon: "bolt.fill", text: "Charging"),
@@ -245,7 +195,11 @@ struct AllSettings: View{
                 }
                 
                 SettingBlock(icon: "fanblades.fill", title: "Climate", subtitle: "Interior 68° F", hasSubtitle: true, backgroundColor: Color.blue)
-                SettingBlock(icon: "location.fill",  title: "Location", subtitle: "EMPIRE STATE BUILDING", hasSubtitle: true)
+                
+                NavigationLink(destination: LocationView()){
+                    SettingBlock(icon: "location.fill",  title: "Location", subtitle: "EMPIRE STATE BUILDING", hasSubtitle: true)
+                }
+               
                 SettingBlock(icon: "sparkles", title: "Upgrades", subtitle: "3 upgrades available", hasSubtitle: true)
                 SettingBlock(icon: "checkerboard.shield", title: "Security", subtitle: "0 EVENTS DETECTED", hasSubtitle: true)
             }
