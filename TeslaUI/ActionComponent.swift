@@ -34,7 +34,11 @@ struct ActionNotification: View {
                 Image(systemName: icon)
                 Text(text)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    withAnimation {
+                        open = false
+                    }
+                }){
                     Text("Cancel")
                         .font(.subheadline)
                         .opacity(0.5)
@@ -73,7 +77,11 @@ struct VoiceCommandView: View{
                 }
                 .padding(.bottom, 30)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    withAnimation{
+                        open = false
+                    }
+                }){
                     Image(systemName: "xmark")
                         .font(.system(size: 24, weight: .semibold, design: .default))
                         .frame(width: 64, height: 64)
