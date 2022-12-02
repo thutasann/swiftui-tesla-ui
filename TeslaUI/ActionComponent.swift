@@ -13,7 +13,9 @@ struct ActionComponent: View {
         
 //        VoiceCommandView(open: .constant(true), text: "Go to Time Square")
         
-        MediaPlayer()
+//        MediaPlayer()
+        
+        ChargingView()
     }
 }
 
@@ -179,6 +181,66 @@ struct MediaPlayer: View{
                         }
                     }
                 }
+            }
+            .padding(.bottom, 20)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color("DrakGray"))
+            .foregroundColor(Color.white)
+            .cornerRadius(16, corners: [.topLeft, .topRight])
+        }
+        .edgesIgnoringSafeArea(.bottom)
+    }
+}
+
+
+// MARK: - Charging View
+struct ChargingView: View{
+    var body: some View{
+        VStack {
+            Spacer()
+            VStack (alignment: .leading, spacing: 20){
+                
+                VStack (alignment: .leading, spacing: 5) {
+                    Label("237 Miles", systemImage: "42.circle")
+                        .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    .foregroundColor(Color("Green"))
+                    Text("3h 55m remain – 32/3A – 30 mi/hour")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                }
+                
+                VStack (alignment: .leading, spacing: 5){
+                    Text("Charge Limit : 315 miles")
+                        .font(.footnote)
+                        .fontWeight(.medium)
+                    
+                    ZStack (alignment: .leading){
+                        Color.white.opacity(0.25)
+                            .frame(height: 6)
+                            .clipShape(Capsule())
+                        Color("Green")
+                            .frame(maxWidth: 200)
+                            .frame(height: 6)
+                            .clipShape(Capsule())
+                        Color.white
+                            .frame(width: 16, height: 16)
+                            .clipShape(Circle())
+                            .offset(x: 195)
+                    }
+                }
+                CustomDivider()
+                Button(action: {}){
+                    Text("Stop Charging")
+                        .font(.footnote)
+                        .fontWeight(.medium)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 14)
+                        .background(Color("Red"))
+                        .clipShape(Capsule())
+                }
+                .frame(maxWidth: .infinity)
+
             }
             .padding(.bottom, 20)
             .padding()
