@@ -3,5 +3,5 @@
 Simple Tesla APP UI started From Scartch.
 
 ## Screenshots
-|![Home](Media/home.png)|![Charging](Media/charging.png)|![MediaControls](Media/media.png)|![Noti](Media/charging.png)|![VoiceCommand](Media/voicecommand.png
-|-|-|-|
+|![Image1](Media/home.png)|![Image2](Media/charging.png)|![Image3](Media/media.png)|![Image4](Media/charging.png)|![Image5](Media/voicecommand.png)
+|-|-|-|-|-|
